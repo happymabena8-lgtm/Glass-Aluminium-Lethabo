@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lethabong Glass & Aluminium offers expert aluminium windows, sliding doors, putty glazing, security gates, and balustrades across Gauteng.">
+    <meta name="theme-color" content="#D11A2A">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <title>Lethabong Glass & Aluminium</title>
+    <style>
+        /* Color Palette from Logo & Business Card */
+        :root {
+            --primary-red: #D11A2A;      /* Red from Logo & Card */
+            --dark-charcoal: #131B23;   /* Deep Dark Blue/Black from Logo */
+            --light-bg: #F9F9F9;        /* Clean light grey for section contrast */
+            --white: #FFFFFF;
+            --text-gray: #555555;
+            --whatsapp-green: #25D366;  /* Official WhatsApp Green */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark-charcoal);
+            background-color: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-area img {
+            height: 75px; /* Increased from 60px for a bigger, more visible logo */
+            width: auto;
+        }
+
+        .brand-name {
+            font-size: 1.4rem; /* Adjusted slightly to look balanced with the extended text */
+            font-weight: 700;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            color: var(--dark-charcoal);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            color: var(--dark-charcoal);
+            width: 42px;
+            height: 42px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background-color: var(--dark-charcoal);
+            margin: 6px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .menu-toggle.open span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .menu-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        nav ul a {
+            text-decoration: none;
+            color: var(--dark-charcoal);
+            font-weight: 600;
+            transition: color 0.3s, opacity 0.3s;
+        }
+
+        nav ul a:hover,
+        nav ul a:focus-visible {
+            color: var(--primary-red);
+            outline: none;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid rgba(209, 26, 42, 0.5);
+            outline-offset: 4px;
+        }
+
+        nav ul a:hover {
+            color: var(--primary-red);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(19, 27, 35, 0.85), rgba(19, 27, 35, 0.85)), url('IMG-20260629-WA0000.jpg') no-repeat center center/cover;
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+            min-height: calc(100vh - 90px);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 span {
+            color: var(--primary-red);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #b01422;
+        }
+
+        /* Section Global Styles */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-red);
+            margin: 15px auto 0;
+        }
+
+        /* About Section */
+        .about-container {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+
+        .ceo-card {
+            margin-top: 30px;
+            padding: 20px;
+            border-left: 4px solid var(--primary-red);
+            background-color: var(--light-bg);
+        }
+
+        .ceo-card h4 {
+            font-size: 1.2rem;
+            color: var(--dark-charcoal);
+        }
+
+        .ceo-card span {
+            font-size: 0.9rem;
+            color: var(--primary-red);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .about-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-img img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Services Section */
+        .services-bg {
+            background-color: var(--light-bg);
+            max-width: 100%;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-bottom: 3px solid var(--primary-red);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-charcoal);
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 6px;
+            height: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact-bg {
+            background-color: var(--dark-charcoal);
+            color: var(--white);
+            max-width: 100%;
+        }
+
+        .contact-bg .section-title {
+            color: var(--white);
+        }
+
+        .nav-container nav ul.active {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 20px;
+            padding-top: 20px;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary-red);
+        }
+
+        .contact-info {
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .contact-method {
+            margin-bottom: 20px;
+        }
+
+        .contact-method div h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--white);
+        }
+
+        .contact-method div p, .contact-method div a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .contact-method div a:hover {
+            color: var(--primary-red);
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #b01422;
+        }
+
+        /* Floating WhatsApp Button Style */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-green);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #1ebea5;
+        }
+
+        .whatsapp-icon {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0d1319;
+            color: #777777;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            border-top: 1px solid #1a242f;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+                align-items: stretch;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-container nav ul {
+                display: none;
+                width: 100%;
+            }
+            .nav-container nav ul.active {
+                display: flex;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul a {
+                width: 100%;
+                display: block;
+                padding: 10px 0;
+            }
+            .about-container {
+                flex-direction: column;
+            }
+            .hero {
+                min-height: auto;
+                padding: 80px 20px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+            .whatsapp-icon {
+                width: 26px;
+                height: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/27670776780" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+        <svg class="whatsapp-icon" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="Logo.png" alt="Lethabong Glass & Aluminium Logo">
+                <div class="brand-name">Lethabong Glass & Aluminium</div>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Our Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero / Main Cover Area -->
+    <div class="hero" id="home">
+        <div class="hero-content">
+            <h1>Expert <span>Glass & Aluminium</span> Solutions</h1>
+            <p>Built to look beautiful, engineered to withstand the elements. Exceptional craftsmanship rooted in family tradition.</p>
+            <a href="https://wa.me/27670776780" class="cta-btn" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <p>Founded on a legacy of craftsmanship, Lethabong Glass & Aluminium began as a home-grown business rooted in family tradition. Under my father’s mentorship, I mastered the art of the trade—from traditional putty glazing to modern aluminium fabrication.</p>
+                <p>He taught me that true quality means flawless execution and lasting durability. Today, we carry that commitment forward, ensuring every project we touch is built to look beautiful and withstand the elements.</p>
+                
+                <div class="ceo-card">
+                    <h4>Lethabo Mhlanga</h4>
+                    <span>CEO & Master Fabricator</span>
+                    <p>Directing operations with a deep commitment to structural integrity, custom design innovations, and absolute client satisfaction across Gauteng.</p>
+                </div>
+            </div>
+            <div class="about-img">
+                <img src="IMG-20260629-WA0004.jpg" alt="Lethabong workshop fabrication framework">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <div class="services-bg" id="services">
+        <section>
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Aluminium Windows</h3>
+                    <p>Custom-fitted, highly durable structural aluminium windows designed to maximize modern natural lighting while offering weather-tight seals.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Gates & Sliding Doors</h3>
+                    <p>Premium multi-folding and smoothly gliding architectural sliding doors alongside robust exterior access gates built for security and elegance.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Putty Glazing & Reglazing</h3>
+                    <p>Honoring our traditional roots with skilled putty glazing applications alongside rapid window reglazing repair replacements.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Burglar Bars & Security Gates</h3>
+                    <p>Heavy-duty protective barriers and reinforced security installations designed seamlessly around architectural openings without cluttering your aesthetics.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Balustrades</h3>
+                    <p>Stunning, secure structural glass and metal balustrades perfect for multi-level reinforcement on balconies, decks, and custom stairways.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Showcase Gallery Section -->
+    <section id="gallery">
+        <h2 class="section-title">Our Work Showcase</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="IMG-20260629-WA0000.jpg" alt="Aluminium folding stack doors patio installation">
+            </div>
+            <div class="gallery-item">
+                <img src="IMG-20260629-WA0001.jpg" alt="Interior floor-to-ceiling panoramic glass panels">
+            </div>
+            <div class="gallery-item">
+                <img src="IMG-20260629-WA0002.jpg" alt="Double-glazed premium tint sliding window fixture">
+            </div>
+            <div class="gallery-item">
+                <img src="IMG-20260629-WA0003.jpg" alt="High luxury dark aluminium main residential entrance door">
+            </div>
+            <!-- Added the new project image here -->
+            <div class="gallery-item">
+                <img src="IMG-20260629-WA0005.jpg" alt="Aluminium folding sliding doors installation in progress">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <div class="contact-bg" id="contact">
+        <section>
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Discuss Your Project</h3>
+                    
+                    <div class="contact-method">
+                        <div>
+                            <h4>Phone & WhatsApp</h4>
+                            <p>Call / WhatsApp: <a href="tel:+27670776780">067 077 6780</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div>
+                            <h4>Email Address</h4>
+                            <p><a href="mailto:Lethabolehlohonolo95@gmail.com">Lethabolehlohonolo95@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div>
+                            <h4>Business Location</h4>
+                            <p>123 Liverpool Street, Soshanguve, Gauteng</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100094134296235" target="_blank" rel="noopener noreferrer">Connect on Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Lethabong Glass & Aluminium. All Rights Reserved. Built with pride by Tsepo Mabena</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('nav ul');
+        const navLinks = document.querySelectorAll('nav ul a');
+
+        function toggleNav() {
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', String(!expanded));
+            navList.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        }
+
+        menuToggle.addEventListener('click', toggleNav);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.classList.remove('open');
+            });
+        });
+    </script>
+</body>
+</html>
